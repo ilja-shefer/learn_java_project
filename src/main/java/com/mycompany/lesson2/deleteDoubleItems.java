@@ -1,7 +1,6 @@
 package com.mycompany.lesson2;
 import java.util.ArrayList;
 
-//TODO MP: 111 
 
 //TODO MP: duplicate import, check  compiler warnings
 import java.util.ArrayList;
@@ -10,6 +9,8 @@ import java.util.ArrayList;
 public class deleteDoubleItems {
 	
     public static ArrayList<String> deleteDouble(String[] args) {
+    	//TODO MP: using ArrayList<> when the type of objects is known in advance is a really bad idea.
+    	// read about what ArrayList<> is used for
         ArrayList <String> sortList = new ArrayList<>();
         for(String s1 : args) {
             for(String s2 : args) {
