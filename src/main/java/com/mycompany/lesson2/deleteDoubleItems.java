@@ -1,6 +1,8 @@
 package com.mycompany.lesson2;
 import java.util.ArrayList;
 
+//TODO MP: 111 
+
 //TODO MP: duplicate import, check  compiler warnings
 import java.util.ArrayList;
 
