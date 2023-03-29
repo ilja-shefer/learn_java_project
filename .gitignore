@@ -1,0 +1,4 @@
+#ingnore target
+target/
+#target/class
+target/classes/com/mycompany/

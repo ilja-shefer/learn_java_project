@@ -2,13 +2,11 @@
 package com.mycompany.lesson2;
 
 import java.util.ArrayList;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
 
-public class deleteDoubleItemsTest {
+public class DeleteDoubleItemsTest {
 
     @AfterAll
     public static void tearDownClass() throws Exception {
@@ -31,25 +29,19 @@ public class deleteDoubleItemsTest {
      */
     @Test
     public void testDeleteDouble() {
-        System.out.println("deleteDouble");
-        String[] args = null;
-        ArrayList<String> expResult = null;
-        ArrayList<String> result = deleteDoubleItems.deleteDouble(args);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of main method, of class deleteDoubleItems.
-     */
-    @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        deleteDoubleItems.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        String[] array = {"hello", "hello", "big", "big","hello", "sell", "sell"};
+        ArrayList <String> expectedArray = new ArrayList <>();
+        expectedArray.add("hello");
+        expectedArray.add("big");
+        expectedArray.add("sell");
+        ArrayList <String> resultArray = DeleteDoubleItems.deleteDouble(array);
+        for(String s : resultArray) {
+            System.out.println(s);
+        }
+        assertEquals(expectedArray.toString(), resultArray.toString());
+        //Test cases: empty array, with some strings without duplicates, null, null like item from array
+        
     }
     
 }
