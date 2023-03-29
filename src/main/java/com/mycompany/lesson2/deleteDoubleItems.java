@@ -13,6 +13,7 @@ public class DeleteDoubleItems {
                 }
             }
         }
+        System.out.println("test");
         return sortList;
     }
 }

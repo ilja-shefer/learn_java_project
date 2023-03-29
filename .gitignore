@@ -1,4 +1,10 @@
 #ingnore target
-target/
+**/target
+*.class
+
+#*/target/**
 #target/class
 target/classes/com/mycompany/
+#nb
+nbproject/
+nbactions.*
