@@ -1,0 +1,10 @@
+#ingnore target
+**/target
+#nb
+nbproject/
+#project
+.project
+#nbactions
+nbactions.xml
+#.gitignore
+#.gitignore
