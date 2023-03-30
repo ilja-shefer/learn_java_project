@@ -8,3 +8,9 @@ nbproject/
 nbactions.xml
 #.gitignore
 #.gitignore
+#bin
+bin/
+#.settings
+.settings
+#.classpath
+.classpath
