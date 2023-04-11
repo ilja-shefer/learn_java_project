@@ -16,17 +16,21 @@
         <Name>Department</Name>
         <Access>Public</Access>
         <Location left="315" top="336" />
-        <Size width="240" height="94" />
+        <Size width="260" height="145" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String name</Member>
+        <Member type="Field">private Employee[] employees</Member>
+        <Member type="Field">private Department[] departments</Member>
+        <Member type="Method">public String getName()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
         <Name>Organisation</Name>
         <Access>Public</Access>
         <Location left="327" top="593" />
-        <Size width="162" height="77" />
+        <Size width="272" height="94" />
         <Collapsed>False</Collapsed>
+        <Member type="Field">private Department[] departments</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -40,8 +44,6 @@
     </Entities>
     <Relationships>
       <Relationship type="Association" first="1" second="0">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -60,7 +62,7 @@
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
-          <X>662</X>
+          <X>682</X>
           <Y>356</Y>
         </BendPoint>
         <BendPoint relativeToStartShape="False">
@@ -73,8 +75,6 @@
         <EndMultiplicity>0..*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="2" second="1">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -89,8 +89,6 @@
         <EndOrientation>Horizontal</EndOrientation>
       </Relationship>
       <Relationship type="Association" first="1" second="3">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
