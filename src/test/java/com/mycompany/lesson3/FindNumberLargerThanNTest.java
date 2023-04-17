@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-class FindNumberLargerThanNTest {
+class FindNumberLargerThanNTest extends BaseTest {
 
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
@@ -29,18 +29,6 @@ class FindNumberLargerThanNTest {
 	}
 	
 	/**
-     * this is a helper method providing the caller method with its fully qualified
-     * name (using format "packageName.className.methodName")
-     * @return a fully qualified name of the calling method
-     */
-    public String getFullMethodName() {
-        String unqualifiedMethodName = new Exception().getStackTrace()[1].getMethodName();
-        String className = this.getClass().getName();
-        return className + "." + unqualifiedMethodName;
-    }
-    
-    
-    /**
      * Test of findNumber method, of class FindNumberLargerThanN.
      */
 
