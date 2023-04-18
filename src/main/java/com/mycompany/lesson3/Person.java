@@ -1,10 +1,12 @@
 package com.mycompany.lesson3;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.*;
 
-public class Person {
+public class Person implements Comparable<Person> {
 	private String name;
 	private int age;
 	
@@ -32,6 +34,13 @@ public class Person {
 		return "{" + "name: " + this.name +", " + "age: " + this.age + "}";
 	}
 	
+	@Override
+	public int compareTo(Person obj) {
+		String otherName = obj.getName();
+		String myName = this.getName();
+		return myName.compareTo(otherName);
+	}
+	
 	public static void main(String[] args) {
 		Person p1 = new Person("John", 22);
 		Person p2 = new Person("Michael", 34);
@@ -46,13 +55,10 @@ public class Person {
 		persons.add(p3);
 		persons.add(p4);
 		
-		System.out.println(persons);
-		//List<Person> sortPersons = new ArrayList<>(persons.stream().sorted((obj1, obj2) -> obj1.getName().compareTo(obj2.getName())));
-		
-		persons
-		.stream()
-		.sorted((obj1, obj2) -> obj2.getName().compareTo(obj1.getName()));
+		Collections.sort(persons);
 		System.out.println(persons);
 		
 	}
+
+	
 }
