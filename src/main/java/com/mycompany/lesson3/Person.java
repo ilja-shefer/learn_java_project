@@ -1,6 +1,8 @@
 package com.mycompany.lesson3;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.*;
 
@@ -29,30 +31,37 @@ public class Person {
 		this.age = age;
 	}
 	public String toString() {
-		return "{" + "name: " + this.name +", " + "age: " + this.age + "}";
+		return "{" + this.name +", " + this.age + "}";
 	}
 	
 	public static void main(String[] args) {
-		Person p1 = new Person("John", 22);
-		Person p2 = new Person("Michael", 34);
-		Person p3 = new Person("Jake", 25);
-		Person p4 = new Person("Andrew", 47);
+		mp_func();
+	}
+	
+	public static void mp_func() {
+		List<Person> persons = new ArrayList<>();
+		persons.add(new Person("John", 22));
+		persons.add(new Person("Michael", 34));
+		persons.add(new Person("Jake", 25));
+		persons.add(new Person("Jake", 11));
+		persons.add(new Person("Andrew", 47));
 		
-		List <Person> persons = new ArrayList<>();
+		//TODO MP: write your own custom comparators; their use would look like this
+		//Collections.sort(persons, new MyComparatorByName());
+		//Collections.sort(persons, new MyComparatorByAge());
+		//Collections.sort(persons, new MyComparatorByNameThenAge());
 		
-		persons.add(p1);
 		
-		persons.add(p2);
-		persons.add(p3);
-		persons.add(p4);
+		//TODO MP: then read the second tutorial; exactly the same code can be written like this:
+		System.out.println("Initial: " + persons);
 		
-		System.out.println(persons);
-		//List<Person> sortPersons = new ArrayList<>(persons.stream().sorted((obj1, obj2) -> obj1.getName().compareTo(obj2.getName())));
-		
-		persons
-		.stream()
-		.sorted((obj1, obj2) -> obj2.getName().compareTo(obj1.getName()));
-		System.out.println(persons);
-		
+		Collections.sort(persons, Comparator.comparing(Person::getName));
+		System.out.println("By name: " + persons);
+
+		Collections.sort(persons, Comparator.comparing(Person::getAge));
+		System.out.println("By age: " + persons);
+
+		Collections.sort(persons, Comparator.comparing(Person::getName).thenComparing(Person::getAge));
+		System.out.println("By name then age: " + persons);
 	}
 }
