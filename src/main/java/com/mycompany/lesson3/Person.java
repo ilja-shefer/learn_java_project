@@ -71,10 +71,13 @@ public class Person implements Comparable<Person> {
 	public static void mp_func() {
 		List<Person> persons = new ArrayList<>();
 		persons.add(new Person("John", 22));
+		persons.add(new Person("John", 16));
 		persons.add(new Person("Michael", 34));
+		persons.add(new Person("Michael", 31));
 		persons.add(new Person("Jake", 25));
 		persons.add(new Person("Jake", 11));
 		persons.add(new Person("Andrew", 47));
+		persons.add(new Person("Andrew", 41));
 		
 		//TODO MP: write your own custom comparators; their use would look like this
 		//Collections.sort(persons, new MyComparatorByName());
@@ -85,17 +88,42 @@ public class Person implements Comparable<Person> {
 		//TODO MP: then read the second tutorial; exactly the same code can be written like this:
 		System.out.println("Initial: " + persons);
 		
-		Collections.sort(persons, Comparator.comparing(Person::getName));
+		//Collections.sort(persons, Comparator.comparing(Person::getName));
+		Collections.sort(persons, new MyComparatorByName());
 		System.out.println("By name: " + persons);
 
-		Collections.sort(persons, Comparator.comparing(Person::getAge));
+		//Collections.sort(persons, Comparator.comparing(Person::getAge));
+		Collections.sort(persons, new MyComparatorByAge());
 		System.out.println("By age: " + persons);
 
-		Collections.sort(persons, Comparator.comparing(Person::getName).thenComparing(Person::getAge));
+		//Collections.sort(persons, Comparator.comparing(Person::getName).thenComparing(Person::getAge));
+		Collections.sort(persons, new MyComparatorByNameThenAge());
 		System.out.println("By name then age: " + persons);
 		
 		System.out.println("-------------------\n");
 	}
 
 	
+}
+
+class MyComparatorByName implements Comparator<Person> {
+	public int compare(Person a, Person b) {
+		return a.getName().compareTo(b.getName());
+	}
+}
+
+class MyComparatorByAge implements Comparator<Person> {
+	public int compare(Person a, Person b) {
+		return a.getAge() - b.getAge();
+	}
+}
+
+class MyComparatorByNameThenAge implements Comparator<Person> {
+	@Override
+	public int compare(Person a, Person b) {
+		int nameCompare = a.getName().compareTo(b.getName());
+		//int ageCompare = a.getAge().compareTo(b.getAge());
+		int ageCompare = a.getAge() - b.getAge();
+		return (nameCompare == 0) ? ageCompare : nameCompare;
+	}
 }
