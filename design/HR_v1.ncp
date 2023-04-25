@@ -16,12 +16,14 @@
         <Name>Department</Name>
         <Access>Public</Access>
         <Location left="315" top="336" />
-        <Size width="260" height="145" />
+        <Size width="260" height="179" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private String name</Member>
         <Member type="Field">private Employee[] employees</Member>
-        <Member type="Field">private Department[] departments</Member>
+        <Member type="Field">private Department[] subDepartments</Member>
         <Member type="Method">public String getName()</Member>
+        <Member type="Method">public void addEmployee()</Member>
+        <Member type="Method">public void removeEmployee()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -44,6 +46,8 @@
     </Entities>
     <Relationships>
       <Relationship type="Association" first="1" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -75,6 +79,8 @@
         <EndMultiplicity>0..*</EndMultiplicity>
       </Relationship>
       <Relationship type="Association" first="2" second="1">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -89,6 +95,8 @@
         <EndOrientation>Horizontal</EndOrientation>
       </Relationship>
       <Relationship type="Association" first="1" second="3">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>

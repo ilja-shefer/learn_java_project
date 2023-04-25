@@ -97,7 +97,8 @@ public class Person implements Comparable<Person> {
 		System.out.println("By age: " + persons);
 
 		//Collections.sort(persons, Comparator.comparing(Person::getName).thenComparing(Person::getAge));
-		Collections.sort(persons, new MyComparatorByNameThenAge());
+		//Collections.sort(persons, new MyComparatorByNameThenAge());
+		Collections.sort(persons, new MyComparatorByName().thenComparing(Person::getAge));
 		System.out.println("By name then age: " + persons);
 		
 		System.out.println("-------------------\n");
